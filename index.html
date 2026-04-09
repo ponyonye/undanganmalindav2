@@ -58,6 +58,20 @@ body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
 }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(252,250,248,0.35), rgba(252,250,248,0.35)),
+    url('media/backgroundmain.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
 body.no-scroll { overflow: hidden; }
 
 /* ── Grain Overlay ── */
@@ -794,7 +808,15 @@ footer { background:transparent; }
 
 @media (max-width: 768px) {
   body {
+    background-image: none;
     background-attachment: scroll;
+  }
+  body::before {
+    opacity: 1;
+    background-position: center top;
+  }
+  .ambient-orbs {
+    display: none;
   }
 }
 
@@ -1080,12 +1102,12 @@ footer { background:transparent; }
       <div class="couple-intro">
         <div class="couple-person">
           <h2 class="couple-person-name">Nurmalinda Rahmawati S.Tr.Bns., M.M</h2>
-          <p class="couple-person-desc"><strong>Putri dari Bapak:</strong>Dedi Irawan &amp; Ibu Siti Umayah</p>
+          <p class="couple-person-desc"><strong>Putri Pertama dari:</strong>Bapak Dedi Irawan &amp; Ibu Siti Umayah</p>
         </div>
         <div class="couple-connector">dengan</div>
         <div class="couple-person">
           <h2 class="couple-person-name">Fahmi Kamal Izzudin S.Tr.Bns</h2>
-          <p class="couple-person-desc"><strong>Putra dari Bapak:</strong>Alm. Juneidy &amp; Ibu Lina Kusmawati</p>
+          <p class="couple-person-desc"><strong>Putra Ketiga dari:</strong>Bapak Alm. Juneidy &amp; Ibu Lina Kusmawati</p>
         </div>
       </div>
     </div>
